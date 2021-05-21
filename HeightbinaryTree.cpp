@@ -1,7 +1,6 @@
 // Algoritmo para encontrar o tamanho da arvore binaria
 #include <iostream>
 using namespace std;
-
 //Função auxiliar que aloca um novo no com os dados fornecidos e ponteiros NULL à esquerda e à direita. 
 struct node{
     int info;
@@ -9,21 +8,17 @@ struct node{
     node *direita;
 };
 typedef node *nodeptr;
-
 int Tamanho_arvore(node* node){
 	if (node == NULL)
 		return 0;
 	else{
 		int tam_l = Tamanho_arvore(node->esquerda);
 		int tam_r = Tamanho_arvore(node->direita);
-
-		
 		if (tam_l > tam_r)
 			return(tam_l + 1);
 		else return (tam_r + 1);
 	}
 }
-
 void Inserir(nodeptr &p, int x){
   
     if (p == NULL){
